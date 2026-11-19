@@ -63,11 +63,13 @@
                     <label for="subMaterial">Sub Material</label>
                     <select id="subMaterial" class="form-control">
                         <option selected>Pilih Sub Material</option>
-                        <?php foreach ($data['sampah'] as $klasifikasi): ?>
-                                            <option value="<?= $klasifikasi['id_sampah']; ?>">
-                                                <?= strtoupper($kategori['sampah']); ?>
-                                            </option>
-                        <?php endforeach; ?>
+                        <?php if (isset($data['sampah']) && is_iterable($data['sampah'])): ?>
+                            <?php foreach ($data['sampah'] as $klasifikasi): ?>
+                                <option value="<?= $klasifikasi['id_sampah']; ?>">
+                                    <?= strtoupper($klasifikasi['nama_klasifikasi'] ?? ''); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </select>
                 </div>
             </div>

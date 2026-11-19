@@ -1,4 +1,9 @@
 
+<?php
+  $currentUrl = $_GET['url'] ?? '';
+  $urlSegments = explode('/', trim($currentUrl, '/'));
+  $lastvalue = $urlSegments[0] ?? '';
+?>
     <nav class="fixed-bottom navbar" style=" background-color: #2d3748; border-top-left-radius: 10px; border-top-right-radius: 10px;">
       <div class="container d-flex justify-content-between">
         <a href="<?=BASEURL;?>" class="navbar-brand text-gray-300 hover:bg-gray-700 hover:text-white text-white rounded-md px-3 py-2 text-sm font-medium">

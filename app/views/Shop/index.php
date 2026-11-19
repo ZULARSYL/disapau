@@ -1,6 +1,6 @@
 <script>
   $(function(){
-    <?php if($_SESSION['data_disapu']['level']=='2'){ ?> 
+    <?php if(isset($_SESSION['data_disapu']) && $_SESSION['data_disapu']['level']=='2'){ ?> 
       $('#tableserverside').DataTable({
         "bPaginate": true,
         "bLengthChange": false,

@@ -2,6 +2,10 @@
     class TukarPoin extends Controller {
 
         public function index(){
+            if(empty($_SESSION['data_disapu'])){
+                header("Location: ".BASEURL.'Login');
+                exit();
+            }
             $data['hadiah'] = $this->model("Tukar_model")->getStok();
             $data['token_screetkey'] = hash_hmac('sha256', KUNCITOKEN, $_SESSION['crfs']);
             $id_user = $_SESSION['data_disapu']['id_user'];
@@ -9,7 +13,7 @@
                 $data['poin_now'] = $this->model("Tukar_model")->getPoin($id_user)['poin_now'];
             }
             $this->view('Templates/header');
-            $this->view('TukarPoin/index', $data);
+            $this->view('Tukarpoin/index', $data);
             $this->view('Templates/footer');
         }
 

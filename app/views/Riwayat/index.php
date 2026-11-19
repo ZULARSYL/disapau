@@ -5,7 +5,7 @@
       <h2 class="card-title">Riwayat Transaksi</h2>
       <div class="accordion" id="accordionExample">
 
-        <?php if ($_SESSION['data_disapu']['level'] == 1) { ?>
+        <?php if (isset($_SESSION['data_disapu']) && $_SESSION['data_disapu']['level'] == 1) { ?>
           <!-- Accordion Item 1 -->
 
           <div class="accordion" id="accordionExample">
