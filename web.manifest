@@ -1,0 +1,39 @@
+{
+  "short_name":"DISAPU",
+  "name":"Digital Sampah Purworejo",
+  "description":"Aplikasi Pengolahan Sampah Digital Desa Purworejo, Kecamatan Senduro, Kabupaten Lumajang",
+  "icons":[
+    {
+      "src":"assets/img/icon/icon32x32.png",
+      "type":"image/png",
+      "sizes":"32x32"
+    },
+    {
+      "src":"assets/img/icon/icon64x64.png",
+      "type":"image/png",
+      "sizes":"64x64"
+    },
+    {
+      "src":"assets/img/icon/icon128x128.png",
+      "type":"image/png",
+      "sizes":"128x128"
+    },
+    {
+      "src":"assets/img/icon/icon256x256.png",
+      "type":"image/png",
+      "sizes":"256x256"
+    },
+    {
+      "src":"assets/img/icon/icon512x512.png",
+      "type":"image/png",
+      "sizes":"512x512"
+    }
+  ],
+  "start_url": "http://localhost/disapuppk/",
+  "background_color":"#4793FF",
+  "display":"standalone",
+  "scope":"/",
+  "theme_color":"#00CB75",
+  "orientation":"portrait"
+
+}
