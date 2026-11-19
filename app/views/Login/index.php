@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,16 +12,18 @@
     <link rel="shortcut icon" href="<?= BASEURL; ?>assets/img/icon/icon32x32.png" type="image/png"/>
     <link rel="manifest" href="<?= BASEURL."web.manifest"; ?>">
     <title><?= TITLE; ?></title>
-    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
-    <!-- Sweet Alert CSS -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.min.css" rel="stylesheet">
-    <!-- sweet alert JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.all.min.js"></script>
-    <!-- JQuery JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      * { font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; }
+    </style>
   </head>
-  <body>
+  <body style="background-color:#f7fafc;">
     <script>
       $(function(){
         $("#form_login").on("submit", function(e) {
@@ -62,44 +64,50 @@
         });
       });
     </script>
-    <section class="vh-100" style="background-color: #e3e5d8">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col col-xl-10">
-            <div class="card" style="border-radius: 1rem">
-              <div class="row g-0">
-                <div class="col-md-6 col-lg-5 d-none d-md-block">
-                  <img src="<?=BASEURL;?>assets/img/Logo Utama.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem"/>
-                </div>
-                <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                  <div class="card-body p-4 p-lg-5 text-black">
-                    <form class="form-horizontal" id="form_login" onsubmit="return false">
-                      <div class="d-flex align-items-center mb-3 pb-1">
-                        <img src="<?=BASEURL;?>assets/img/wiga.png" alt="Logo Wiga" width="50px" class="me-3"/>
-                        <span class="h1 fw-bold mb-0">Disapu</span>
-                      </div>
-                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Masuk Ke Akun Anda</h5>
-                      <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="hidden" name="inputtoken" id="inputtoken" value="<?= $data['token_screetkey']; ?>">
-                        <input type="text" id="username" name="username" class="form-control form-control-lg" required/>
-                        <label class="form-label" for="form2Example17">Username</label>
-                      </div>
-                      <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="password" id="form2Example27" class="form-control form-control-lg" name="password" required/>
-                        <label class="form-label" for="form2Example27">Password</label>
-                      </div>
-                      <div class="pt-1 mb-4">
-                        <button class="btn btn-dark btn-lg btn-block" type="submit" name="proses" id="proses">Login</button> 
-                      </div>
-                    </form>
-                    <a href="<?= BASEURL; ?>">Go Back</a>
-                  </div>
-                </div>
+
+    <div class="min-vh-100 d-flex align-items-center justify-content-center py-5 px-3">
+      <div class="w-100" style="max-width:420px;">
+        <!-- Logo & Brand -->
+        <div class="text-center mb-4">
+          <img src="<?=BASEURL;?>assets/img/logo.png" alt="Logo" style="height:56px;" class="mb-3">
+          <h4 class="fw-bold mb-1" style="color:#2d3748;">Disapu</h4>
+          <p class="text-muted" style="font-size:0.9rem;">Digital Sampah Purworejo</p>
+        </div>
+
+        <!-- Login Card -->
+        <div class="card border-0" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.06);">
+          <div class="card-body p-4">
+            <h5 class="fw-semibold mb-1" style="color:#2d3748;">Masuk</h5>
+            <p class="text-muted mb-4" style="font-size:0.85rem;">Masuk ke akun Anda untuk melanjutkan</p>
+
+            <form id="form_login" onsubmit="return false">
+              <input type="hidden" name="inputtoken" id="inputtoken" value="<?= $data['token_screetkey']; ?>">
+
+              <div class="mb-3">
+                <label class="form-label fw-medium" style="font-size:0.85rem;color:#2d3748;" for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" style="border:1.5px solid #cbd5e0;border-radius:10px;padding:11px 14px;font-size:0.9rem;" placeholder="Masukkan username" required/>
               </div>
+
+              <div class="mb-4">
+                <label class="form-label fw-medium" style="font-size:0.85rem;color:#2d3748;" for="password">Password</label>
+                <input type="password" id="form2Example27" name="password" class="form-control" style="border:1.5px solid #cbd5e0;border-radius:10px;padding:11px 14px;font-size:0.9rem;" placeholder="Masukkan password" required/>
+              </div>
+
+              <button class="btn w-100 text-white fw-semibold" type="submit" name="proses" id="proses" style="background:linear-gradient(135deg,#2d6a4f,#40916c);border:none;border-radius:10px;padding:12px;font-size:0.95rem;transition:all 0.2s;">
+                Masuk
+              </button>
+            </form>
+
+            <div class="text-center mt-3">
+              <a href="<?= BASEURL; ?>" class="text-decoration-none" style="color:#2d6a4f;font-size:0.85rem;font-weight:500;">
+                <i class="bi bi-arrow-left me-1"></i>Kembali ke Beranda
+              </a>
             </div>
           </div>
         </div>
+
+        <p class="text-center text-muted mt-4" style="font-size:0.75rem;">&copy; <?= date('Y'); ?> Disapu. All rights reserved.</p>
       </div>
-    </section>
+    </div>
   </body>
 </html>
